@@ -32,10 +32,10 @@ class tkinterScreen(tk.Tk):
         
         self.showFrame(MainMenu)
 
-        # display current frame passed as parameter
-        def showFrame(self, cont):
-            frame = self.frames[cont]
-            frame.tkraise()
+    # display current frame passed as parameter
+    def showFrame(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
 
 
 
@@ -124,3 +124,5 @@ class Page2(tk.Frame):
 
         # setting up grid for button2
         button2.grid(row=2, column=1, padx=10, pady=10)
+
+
