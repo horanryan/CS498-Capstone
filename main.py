@@ -10,16 +10,14 @@ CS498 Capstone Project
 Fall 2022
 
 """
-from loadWindow import tkinterScreen
+from loadWindow import *
 
-def startWindow():
-    window = tkinterScreen()
-    window.mainloop()
 
 def main():
-    startWindow()
+    window = tkinterScreen()
+    window.mainloop()
     
 
 
-if "__name__" == main:
+if __name__ == "__main__":
     main()
