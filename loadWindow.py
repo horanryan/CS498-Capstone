@@ -1,7 +1,6 @@
+# imports needed for tkinter
 import tkinter as tk
-from tkinter import Frame, Grid, ttk
-from traceback import FrameSummary
-from typing_extensions import Self
+from tkinter import ttk
 
 # global font style
 typeFont = ("System", 25)
@@ -13,7 +12,7 @@ class tkinterScreen(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
 
         # create a container
-        container = tk.Frame(Self)
+        container = tk.Frame(self)
         container.pack(side = "top", fill="both", expand= True)
 
         container.grid_rowconfigure(0, weight= 1)
