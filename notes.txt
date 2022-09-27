@@ -1,0 +1,5 @@
+Loading the window
+    - User should be able to choose which borough they want to be in
+        - add each individual borough in nyc
+        - add each borough's subway lines
+        
