@@ -1,6 +1,6 @@
 # imports needed for tkinter
 import tkinter as tk
-from tkinter import ttk
+from tkinter import Grid, ttk
 
 # global font style
 typeFont = ("System", 25)
@@ -22,7 +22,7 @@ class tkinterScreen(tk.Tk):
         self.frames = {}
 
         # iterate through a tuple consisting of the different page layouts
-        for F in (MainMenu, Bronx, Manhattan):
+        for F in (MainMenu, Bronx, Manhattan, Brooklyn):
             frame = F(container, self)
 
             # init frame of objhect from MainMenu, Page1, Page2 respectively with a for loop
@@ -60,18 +60,25 @@ class MainMenu(tk.Frame):
         button1 = ttk.Button(self, text="Bronx", 
                              command= lambda : controller.showFrame(Bronx))
 
-        # setting up grid for button1
+        # grid set up for Bronx button
         button1.grid(row = 1, column=1, padx=10, pady=10)
 
         # Button for manhattan
         button2 = ttk.Button(self, text="Manhattan", 
                              command= lambda : controller.showFrame(Manhattan))
 
-        # setting up grid for button2
+        # grid set up for Manhattan button
         button2.grid(row=2, column=1, padx=10, pady=10)
 
+        # Button for Brooklyn
+        button3 = ttk.Button(self, text="Brooklyn",
+                             command= lambda : controller.showFrame(Brooklyn))
 
-# second window frame page 1
+        # grid set up for Brooklyn button
+        button3.grid(row=3, column=1, padx=10, pady=10)
+
+
+# second window frame Bronx
 class Bronx(tk.Frame):
     # init function for Page1
     def __init__(self, parent, controller):
@@ -100,14 +107,12 @@ class Bronx(tk.Frame):
         # setting up grid for button2
         button2.grid(row=2, column=1, padx=10, pady=10)
 
-# third window frame page 2
+# third window frame Manhattan
 class Manhattan(tk.Frame):
-    # init function for Page2
+    # init function for Manhattan
     def __init__(self, parent, controller):
-        # init function for class in Page2
+        # init function for class in Manhattan
         tk.Frame.__init__(self, parent)
-
-
 
         # label for manhattan
         label = ttk.Label(self, text="Manhattan", font=typeFont)
@@ -129,5 +134,31 @@ class Manhattan(tk.Frame):
         # setting up grid for bronx
         button1.grid(row=2, column=1, padx=10, pady=10)
 
+# fourth window frame Brooklyn 
+class Brooklyn(tk.Frame):
+    # init function for Brooklyn
+    def __init__(self, parent, controller):
+        # init function for class in Brooklyn
+        tk.Frame.__init__(self, parent)
+
+                # label for manhattan
+        label = ttk.Label(self, text="Manhattan", font=typeFont)
+
+        # setting up grid for label
+        label.grid(row=0, column=4, padx=10, pady=10)
+        
+        # Button for main menu
+        button2 = ttk.Button(self, text="Main Menu", 
+                             command= lambda : controller.showFrame(MainMenu))
+
+        # setting up grid for button2
+        button2.grid(row = 1, column=1, padx=10, pady=10)
+
+        # Button for Bronx
+        button1 = ttk.Button(self, text="Bronx", 
+                             command= lambda : controller.showFrame(Bronx))
+
+        # setting up grid for bronx
+        button1.grid(row=2, column=1, padx=10, pady=10)
 
 
