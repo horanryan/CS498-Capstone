@@ -3,7 +3,6 @@ Loading the window
         - add each individual borough in nyc
         - add each borough's subway lines
 
-<<<<<<< HEAD
 Programming the subway lines
     - https://pypi.org/project/underground/
 
@@ -16,7 +15,6 @@ API Keys - Adrian
     - J,Z(https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-jz)
     - L(https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-l)
     - SIR(https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-si)
-=======
 API KEYS
     A C E - https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-ace
     G - https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-g
@@ -32,4 +30,3 @@ API KEYS
 
 
         
->>>>>>> 1d315151a7431d0bd0879beae4e0450d534805b3
