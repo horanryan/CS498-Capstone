@@ -1,5 +1,5 @@
 """
-Authores:
+Authors:
 Adrian Martinez 
 Ryan Horan
 
