@@ -13,10 +13,20 @@ Fall 2022
 from loadWindow import tkinterScreen
 
 
-def main():
+
+def loadWindow():
+    # root window
     window = tkinterScreen()
+    # set window size
+    window.geometry("700x500")
+    # set window title
+    window.title("CS 498 Capstone")
     window.mainloop()
     
+
+
+def main():
+    loadWindow()
 
 
 if __name__ == "__main__":
