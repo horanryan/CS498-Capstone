@@ -13,7 +13,7 @@ class tkinterScreen(tk.Tk):
 
         # create a container
         container = tk.Frame(self)
-        container.pack(side = "top", fill="both", expand= True)
+        container.pack(side = "top")
 
         container.grid_rowconfigure(0, weight= 1)
         container.grid_columnconfigure(0, weight=1)
@@ -22,7 +22,7 @@ class tkinterScreen(tk.Tk):
         self.frames = {}
 
         # iterate through a tuple consisting of the different page layouts
-        for F in (MainMenu, Bronx, Manhattan, Brooklyn):
+        for F in (MainMenu, Bronx, Manhattan, Brooklyn, Queens, StatenIsland):
             frame = F(container, self)
 
             # init frame of objhect from MainMenu, Page1, Page2 respectively with a for loop
@@ -48,35 +48,45 @@ class MainMenu(tk.Frame):
 
         # label for main menu
         label = ttk.Label(self, text="Main Menu", font=typeFont)
+    
 
         # setting up grid for label
-        label.grid(row=0, column=3, padx=0, pady=0)
+        label.grid(row=2, column=2, sticky="NE")
+        
         
         # sub label for main menu
         subLabel = ttk.Label(self, text="Choose starting borough", font=typeFont)
-        subLabel.grid(row=1, column=3, padx=2, pady=0)
+        subLabel.grid(row=3, column=2, padx=0, pady=10, sticky="NE")
 
         # Button for the bronx
         button1 = ttk.Button(self, text="Bronx", 
                              command= lambda : controller.showFrame(Bronx))
 
         # grid set up for Bronx button
-        button1.grid(row = 1, column=1, padx=10, pady=10)
+        button1.grid(row = 7, column=1)
 
         # Button for manhattan
         button2 = ttk.Button(self, text="Manhattan", 
                              command= lambda : controller.showFrame(Manhattan))
 
         # grid set up for Manhattan button
-        button2.grid(row=2, column=1, padx=10, pady=10)
+        button2.grid(row=7, column=2)
 
         # Button for Brooklyn
         button3 = ttk.Button(self, text="Brooklyn",
                              command= lambda : controller.showFrame(Brooklyn))
 
         # grid set up for Brooklyn button
-        button3.grid(row=3, column=1, padx=10, pady=10)
+        button3.grid(row=7, column=3)
 
+        # Button for Queens
+        button4 = ttk.Button(self, text="Queens",
+                             command= lambda : controller.showFrame(Queens))
+        button4.grid(row=7, column=4)                             
+
+        button5 = ttk.Button(self, text="Staten Island",
+                             command= lambda : controller.showFrame(StatenIsland))    
+        button5.grid(row=7, column=5)
 
 # second window frame Bronx
 class Bronx(tk.Frame):
@@ -141,8 +151,8 @@ class Brooklyn(tk.Frame):
         # init function for class in Brooklyn
         tk.Frame.__init__(self, parent)
 
-                # label for manhattan
-        label = ttk.Label(self, text="Manhattan", font=typeFont)
+        # label for manhattan
+        label = ttk.Label(self, text="BrookLyn", font=typeFont)
 
         # setting up grid for label
         label.grid(row=0, column=4, padx=10, pady=10)
@@ -162,3 +172,55 @@ class Brooklyn(tk.Frame):
         button1.grid(row=2, column=1, padx=10, pady=10)
 
 
+class Queens(tk.Frame):
+    # init function for Queens
+    def __init__(self, parent, controller):
+        # init function for class in queens
+        tk.Frame.__init__(self, parent)
+
+        # label for queens
+        label = ttk.Label(self, text="Queens", font=typeFont)
+
+        # setting up grid for label
+        label.grid(row=0, column=4,padx=0,pady=0)
+
+        # Button for main menu
+        button2 = ttk.Button(self, text="Main Menu", 
+                             command= lambda : controller.showFrame(MainMenu))
+
+        # setting up grid for button2
+        button2.grid(row = 1, column=1, padx=10, pady=10)
+
+        # Button for Bronx
+        button1 = ttk.Button(self, text="Bronx", 
+                             command= lambda : controller.showFrame(Bronx))
+
+        # setting up grid for bronx
+        button1.grid(row=2, column=1, padx=10, pady=10)
+    
+class StatenIsland(tk.Frame):
+    # init function for Queens
+    def __init__(self, parent, controller):
+        # init function for class in queens
+        tk.Frame.__init__(self, parent)
+
+        # label for queens
+        label = ttk.Label(self, text="Staten Island", font=typeFont)
+
+        # setting up grid for label
+        label.grid(row=0, column=4,padx=0,pady=0)
+
+        # Button for main menu
+        button2 = ttk.Button(self, text="Main Menu", 
+                             command= lambda : controller.showFrame(MainMenu))
+
+        # setting up grid for button2
+        button2.grid(row = 1, column=1, padx=10, pady=10)
+
+        # Button for Bronx
+        button1 = ttk.Button(self, text="Bronx", 
+                             command= lambda : controller.showFrame(Bronx))
+
+        # setting up grid for bronx
+        button1.grid(row=2, column=1, padx=10, pady=10)
+        

@@ -3,6 +3,13 @@ Loading the window
         - add each individual borough in nyc
         - add each borough's subway lines
 
+Load a map
+    - Install tkintermapview
+    - Install pyperclip
+    - Video guide
+        - https://www.youtube.com/watch?v=QvO4LTNDIyA&ab_channel=Codemy.com
+        
+        
 
 
 
