@@ -1,6 +1,7 @@
 # imports needed for tkinter
 import tkinter as tk
 from tkinter import Grid, ttk
+import tkintermapview
 
 # global font style
 typeFont = ("System", 25)
@@ -22,7 +23,7 @@ class tkinterScreen(tk.Tk):
         self.frames = {}
 
         # iterate through a tuple consisting of the different page layouts
-        for F in (MainMenu, Bronx, Manhattan, Brooklyn, Queens, StatenIsland):
+        for F in (MainMenu, Bronx, Manhattan, Brooklyn, Queens):
             frame = F(container, self)
 
             # init frame of objhect from MainMenu, Page1, Page2 respectively with a for loop
@@ -53,7 +54,7 @@ class MainMenu(tk.Frame):
         # setting up grid for label
         label.grid(row=2, column=2, sticky="NE")
         
-        
+
         # sub label for main menu
         subLabel = ttk.Label(self, text="Choose starting borough", font=typeFont)
         subLabel.grid(row=3, column=2, padx=0, pady=10, sticky="NE")
@@ -84,9 +85,6 @@ class MainMenu(tk.Frame):
                              command= lambda : controller.showFrame(Queens))
         button4.grid(row=7, column=4)                             
 
-        button5 = ttk.Button(self, text="Staten Island",
-                             command= lambda : controller.showFrame(StatenIsland))    
-        button5.grid(row=7, column=5)
 
 # second window frame Bronx
 class Bronx(tk.Frame):
@@ -102,6 +100,12 @@ class Bronx(tk.Frame):
 
         # setting up grid for label
         label.grid(row=0, column=4, padx=10, pady=10)
+
+        map_widget = tkintermapview.TkinterMapView(label, width=500, height=500, corner_radius=0)
+        map_widget.set_position(40.8448, 73.8648)
+        map_widget.set_zoom(10)
+
+        map_widget.pack()
 
         # Button for Page 1
         button1 = ttk.Button(self, text="Main Menu", 
@@ -129,6 +133,12 @@ class Manhattan(tk.Frame):
 
         # setting up grid for label
         label.grid(row=0, column=4, padx=10, pady=10)
+
+        map_widget = tkintermapview.TkinterMapView(label, width=500, height=500, corner_radius=0)
+        map_widget.set_position(40.7831, 73.9712)
+        map_widget.set_zoom(10)
+
+        map_widget.pack()
         
         # Button for main menu
         button2 = ttk.Button(self, text="Main Menu", 
@@ -157,6 +167,10 @@ class Brooklyn(tk.Frame):
         # setting up grid for label
         label.grid(row=0, column=4, padx=10, pady=10)
         
+        map_widget = tkintermapview.TkinterMapView(label, width=500, height=500, corner_radius=0)
+        map_widget.set_position(40.6782, 73.9442)
+        map_widget.set_zoom(10)        
+        map_widget.pack()
         # Button for main menu
         button2 = ttk.Button(self, text="Main Menu", 
                              command= lambda : controller.showFrame(MainMenu))
@@ -184,6 +198,12 @@ class Queens(tk.Frame):
         # setting up grid for label
         label.grid(row=0, column=4,padx=0,pady=0)
 
+        map_widget = tkintermapview.TkinterMapView(label, width=500, height=500, corner_radius=0)
+        map_widget.set_position(40.7282, 73.7949)
+        map_widget.set_zoom(10) 
+        map_widget.pack()
+
+
         # Button for main menu
         button2 = ttk.Button(self, text="Main Menu", 
                              command= lambda : controller.showFrame(MainMenu))
@@ -198,29 +218,3 @@ class Queens(tk.Frame):
         # setting up grid for bronx
         button1.grid(row=2, column=1, padx=10, pady=10)
     
-class StatenIsland(tk.Frame):
-    # init function for Queens
-    def __init__(self, parent, controller):
-        # init function for class in queens
-        tk.Frame.__init__(self, parent)
-
-        # label for queens
-        label = ttk.Label(self, text="Staten Island", font=typeFont)
-
-        # setting up grid for label
-        label.grid(row=0, column=4,padx=0,pady=0)
-
-        # Button for main menu
-        button2 = ttk.Button(self, text="Main Menu", 
-                             command= lambda : controller.showFrame(MainMenu))
-
-        # setting up grid for button2
-        button2.grid(row = 1, column=1, padx=10, pady=10)
-
-        # Button for Bronx
-        button1 = ttk.Button(self, text="Bronx", 
-                             command= lambda : controller.showFrame(Bronx))
-
-        # setting up grid for bronx
-        button1.grid(row=2, column=1, padx=10, pady=10)
-        

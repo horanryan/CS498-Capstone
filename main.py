@@ -10,7 +10,7 @@ CS498 Capstone Project
 Fall 2022
 
 """
-from tkinter import *
+# from tkinter import *
 
 from loadWindow import tkinterScreen
 
