@@ -36,17 +36,11 @@ def loadMap(label):
     while i < 494:
        marker = map_widget.set_marker(df['stop_lat'][i], df['stop_lon'][i], text = df['stop_name'][i])
        i+= 1
-    map_widget.pack()
-  
-
-    
+    map_widget.pack()    
 
 
 def main():
     loadWindow()
-    
-
-
 
 if __name__ == "__main__":
     main()
