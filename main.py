@@ -12,6 +12,7 @@ Fall 2022
 """
 import tkinter
 import tkintermapview
+import pandas as pd
 
 def loadWindow():
     root = tkinter.Tk()
@@ -39,7 +40,13 @@ def main():
     loadWindow()
 
 
-
+def add_markers():
+    t_stops = pd.read_csv('C:\Users\Ryan\CS498-Capstone\MTALines\stops.csv')
+    
+    
+    
+    
+    
 
 
 
