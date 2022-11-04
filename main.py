@@ -31,21 +31,19 @@ def loadMap(label):
     map_widget = tkintermapview.TkinterMapView(label, width=800, height=600, corner_radius=0)
     map_widget.set_position(40.7128, -74.0060)
     map_widget.set_zoom(10)
+    df = pd.read_csv('stops.csv')
+    i = 0
+    while i < 494:
+       marker = map_widget.set_marker(df['stop_lat'][i], df['stop_lon'][i], text = df['stop_name'][i])
+       i+= 1
     map_widget.pack()
+  
 
     
 
 
 def main():
     loadWindow()
-
-
-def add_markers():
-    t_stops = pd.read_csv('C:\Users\Ryan\CS498-Capstone\MTALines\stops.csv')
-    
-    
-    
-    
     
 
 
