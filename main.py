@@ -32,6 +32,8 @@ def loadMap(label):
     map_widget = tkintermapview.TkinterMapView(label, width=800, height=600, corner_radius=0)
     map_widget.set_position(40.7128, -74.0060)
     map_widget.set_zoom(10)
+    map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga", max_zoom=22)  
+
     df = pd.read_csv('stops.csv')
     i = 0
     while i < 494:
