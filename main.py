@@ -13,11 +13,10 @@ Fall 2022
 import tkinter
 import tkintermapview
 import pandas as pd
-import geopandas
 import osmnx as ox
 import plotly.graph_objects as go
 import networkx as nx
-import pyperclip
+
 
 def loadWindow():
     root = tkinter.Tk()
